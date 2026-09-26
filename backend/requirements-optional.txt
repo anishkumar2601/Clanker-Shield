@@ -1,0 +1,4 @@
+# Optional external scanners. ClankerShield works fully without these -
+# their pipeline stages will honestly report "not_installed" if absent.
+semgrep==1.85.0
+bandit==1.7.10

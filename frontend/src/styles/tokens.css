@@ -1,0 +1,113 @@
+:root {
+  /* Surfaces */
+  --bg: #f6f6f4;
+  --bg-subtle: #efefec;
+  --surface: #ffffff;
+  --surface-glass: rgba(255, 255, 255, 0.72);
+  --border: rgba(23, 24, 28, 0.08);
+  --border-strong: rgba(23, 24, 28, 0.14);
+
+  /* Text */
+  --ink: #17181c;
+  --ink-2: #55575f;
+  --ink-3: #92949c;
+  --ink-inverse: #f8f8f6;
+
+  /* Semantic accents */
+  --red: #d64545;
+  --red-bg: #fbebeb;
+  --red-ink: #9c2f2f;
+  --amber: #c8871a;
+  --amber-bg: #fbf1de;
+  --amber-ink: #8a5f11;
+  --green: #1f9d5a;
+  --green-bg: #e7f6ee;
+  --green-ink: #157043;
+  --cyan: #2073c9;
+  --cyan-bg: #e9f2fc;
+  --cyan-ink: #17538f;
+  --purple: #7c5cfc;
+  --purple-bg: #f1edfe;
+  --purple-ink: #5b3fd6;
+
+  /* Dark landing surfaces */
+  --dark-bg: #0d0e12;
+  --dark-surface: #16171d;
+  --dark-border: rgba(255, 255, 255, 0.08);
+
+  /* Radius */
+  --r-sm: 10px;
+  --r-md: 16px;
+  --r-lg: 22px;
+  --r-xl: 30px;
+  --r-pill: 999px;
+
+  /* Shadow - depth reserved for genuinely elevated / floating surfaces */
+  --shadow-1: 0 1px 2px rgba(23, 24, 28, 0.04);
+  --shadow-2: 0 6px 20px rgba(23, 24, 28, 0.06);
+  --shadow-3: 0 20px 50px rgba(23, 24, 28, 0.10);
+  --shadow-4: 0 30px 80px rgba(23, 24, 28, 0.16);
+  --shadow-inset-glass: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+
+  /* Type */
+  --font-ui: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+
+  /* Motion */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 140ms;
+  --dur-med: 260ms;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* The dashboard intentionally stays light per the product's visual
+       direction; only components that explicitly opt into --dark-* tokens
+       (the landing page) render dark. */
+  }
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root { height: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-ui);
+  -webkit-font-smoothing: antialiased;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, p { margin: 0; }
+
+button, input, textarea { font-family: inherit; }
+
+a { color: inherit; }
+
+::selection { background: rgba(124, 92, 252, 0.22); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
